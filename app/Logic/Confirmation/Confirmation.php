@@ -4,7 +4,7 @@ namespace app\Logic\Confirmation;
 
 use app\Logic\Sender\Sender;
 
-interface Verify
+interface Confirmation
 {
     public function setSender(Sender $sender): static;
 

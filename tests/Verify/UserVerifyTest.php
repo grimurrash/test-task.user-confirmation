@@ -5,7 +5,7 @@ namespace tests\Verify;
 use app\Logic\Sender\EmailSender;
 use app\Logic\Sender\PhoneSender;
 use app\Logic\Sender\TelegramSender;
-use app\Logic\Verify\UserVerify;
+use app\Logic\Confirmation\UserConfirmation;
 use app\Models\User;
 use PHPUnit\Framework\TestCase;
 
@@ -21,13 +21,13 @@ class UserVerifyTest extends TestCase
     public function testVerificationConfirmationCode()
     {
         $this->user->setConfirmationCode('8888');
-        $userVerify = new UserVerify($this->user);
+        $userVerify = new UserConfirmation($this->user);
         $this->assertEquals(true, $userVerify->verificationConfirmationCode('8888'));
     }
 
     public function testSendingConfirmationCode()
     {
-        $userVerify = new UserVerify($this->user);
+        $userVerify = new UserConfirmation($this->user);
         $userVerify->setSender(new TelegramSender($this->user->getTelegramChatId()));
         $this->assertEquals(true, $userVerify->sendingConfirmationCode());
 

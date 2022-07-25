@@ -5,7 +5,7 @@ namespace app\Logic\Confirmation;
 use app\Logic\Sender\Sender;
 use app\Models\User;
 
-class UserVerify implements Verify
+class UserConfirmation implements Confirmation
 {
     private Sender $sender;
 
