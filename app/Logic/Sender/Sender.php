@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Logic\Dispatch;
+namespace app\Logic\Sender;
 
 use app\Logic\Logger\Logger;
 

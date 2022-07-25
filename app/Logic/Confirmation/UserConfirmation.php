@@ -1,8 +1,8 @@
 <?php
 
-namespace app\Logic\Verify;
+namespace app\Logic\Confirmation;
 
-use app\Logic\Dispatch\Sender;
+use app\Logic\Sender\Sender;
 use app\Models\User;
 
 class UserVerify implements Verify

@@ -6,7 +6,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT);
 
 require_once __DIR__. "/vendor/autoload.php";
 
-use app\Logic\Dispatch\TelegramSender;
+use app\Logic\Sender\TelegramSender;
 use app\Logic\Verify\UserVerify;
 use app\Models\User;
 

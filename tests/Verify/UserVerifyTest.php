@@ -2,9 +2,9 @@
 
 namespace tests\Verify;
 
-use app\Logic\Dispatch\EmailSender;
-use app\Logic\Dispatch\PhoneSender;
-use app\Logic\Dispatch\TelegramSender;
+use app\Logic\Sender\EmailSender;
+use app\Logic\Sender\PhoneSender;
+use app\Logic\Sender\TelegramSender;
 use app\Logic\Verify\UserVerify;
 use app\Models\User;
 use PHPUnit\Framework\TestCase;

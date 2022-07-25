@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Logic\Dispatch;
+namespace app\Logic\Sender;
 
 use app\Logic\Logger\Logger;
 
@@ -21,16 +21,9 @@ class EmailSender implements Sender
 
     public function send(string $message): bool
     {
-        # Логика отправки
         try {
-            /*
-            $result = (new CMailer)
-              ->from($this->from)
-              ->to($this->getRecipients())
-              ->subject($this->getSubject())
-              ->message($message)
-              ->send();
-            */
+            # Логика отправки
+
             $this->log('Логирование результата');
             return true;
         } catch (\Exception $exception) {

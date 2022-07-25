@@ -1,26 +1,26 @@
 <?php
 
-namespace app\Logic\Dispatch;
+namespace app\Logic\Sender;
 
 use app\Logic\Logger\Logger;
 
-class PhoneSender implements Sender
+class TelegramSender implements Sender
 {
-    private string $phone;
+    private string $chatId;
+    private string $parseMode;
     private ?Logger $logger = null;
 
-    public function __construct(string $phone)
+    public function __construct(string $chatId, string $parseMode = 'html')
     {
-        $this->phone = $phone;
+        $this->chatId = $chatId;
+        $this->parseMode = $parseMode;
     }
 
     public function send(string $message): bool
     {
-        # Логика отправки
         try {
-//            $result = SMSManager::setPhone($this->phone)
-//              ->setMessage($message)
-//              ->send();
+            # Логика отправки
+
             $this->log('Логирование результата');
             return true;
         } catch (\Exception $exception) {
@@ -29,9 +29,9 @@ class PhoneSender implements Sender
         return false;
     }
 
-    public function setPhone(string $phone): static
+    public function setChatId(string $chatId): static
     {
-        $this->phone = $phone;
+        $this->chatId = $chatId;
         return $this;
     }
 

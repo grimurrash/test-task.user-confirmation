@@ -1,26 +1,24 @@
 <?php
 
-namespace app\Logic\Dispatch;
+namespace app\Logic\Sender;
 
 use app\Logic\Logger\Logger;
 
-class TelegramSender implements Sender
+class PhoneSender implements Sender
 {
-    private string $chatId;
-    private string $parseMode;
+    private string $phone;
     private ?Logger $logger = null;
 
-    public function __construct(string $chatId, string $parseMode = 'html')
+    public function __construct(string $phone)
     {
-        $this->chatId = $chatId;
-        $this->parseMode = $parseMode;
+        $this->phone = $phone;
     }
 
     public function send(string $message): bool
     {
-        # Логика отправки
         try {
-            # $result = TelegramBot::sendMessage($this->chatId, $message, $this->parseMode);
+            # Логика отправки
+
             $this->log('Логирование результата');
             return true;
         } catch (\Exception $exception) {
@@ -29,9 +27,9 @@ class TelegramSender implements Sender
         return false;
     }
 
-    public function setChatId(string $chatId): static
+    public function setPhone(string $phone): static
     {
-        $this->chatId = $chatId;
+        $this->phone = $phone;
         return $this;
     }
 
